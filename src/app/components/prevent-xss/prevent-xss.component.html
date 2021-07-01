@@ -1,0 +1,16 @@
+<h1>XSS Prevention</h1>
+
+<textarea type="text" [(ngModel)]="inputValue"></textarea>
+
+<p>{{ inputValue }}</p>
+
+<h3>With tags (sanitized)</h3>
+<p [innerHTML]="inputValue"></p>
+
+<h3>With tags (bypassed)</h3>
+<p [innerHTML]="sanitizedValue"></p>
+
+<h1>Image source</h1>
+<input type="text" [(ngModel)]="imageSource" />
+<br />
+<img [src]="imageSource" alt="" />
